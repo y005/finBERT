@@ -1,3 +1,34 @@
+# Finbert를 사용한 주식 뉴스기사 감성분석 방법
+
+## 사용환경 세팅
+ 
+ 1. Finbert 모델: [링크](https://huggingface.co/ProsusAI/finbert)로 접속해 `pytorch_model.bin` 다운로드 
+ 
+ 2. `models/sentiment/finbert` 폴더 안에 파일 세팅:  
+*`config.json` (프로젝트 폴더에 있는 파일 복사)
+*`pytorch_model.bin`(1에서 다운받은 감성분석 파일)
+
+ 3. 필요한 파이썬 라이브러리 설치(윈도우os 환경에서 mingw사용):  
+```bash
+ cd requirements.txt가 있는 프로젝트 폴더 
+ pip install -r requirements.txt
+```
+
+ 4. 모델 사용하기 
+* 테스트 파일에 대한 감성분석
+```bash
+cd predict.py가 있는 프로젝트 폴더
+python predict.py --text_path test.txt --output_dir output/ --model_path models/sentiment/finbert
+```
+
+## 추가된 파이썬 파일
+* `requirements.txt`: 프로젝트 실행을 위한 라이브러리 설치 환경(torch 설치의 경우 [링크](https://pytorch.org/get-started/locally/)로 접속해 환경에 맞는 torch명령어 복붙하기)
+* `stock news sentiment analysis.ipynb`: 야후 파이낸스 api를 이용해서 종목별로 관련된 뉴스들을 수집하고 뉴스에 대한 감성분석 비율을 csv로 저장하는 코드
+* `using pretrained finbert model.ipynb`: 감성분석 과정을 확인해보는 주피터 노트북용 코드 
+* `analysis.py`: 야후 파이낸스 api를 이용해서 종목별로 관련된 뉴스들을 수집하고 뉴스에 대한 감성분석 비율을 csv로 저장하는 코드
+* `sentimentAPI.py`: 감성분석한 결과를 읽어와서 클라이언트로 전송하는 restful api 서버환경에서의 코드
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # FinBERT: Financial Sentiment Analysis with BERT
 
 FinBERT sentiment analysis model is now available on Hugging Face model hub. You can get the model [here](https://huggingface.co/ProsusAI/finbert). 
