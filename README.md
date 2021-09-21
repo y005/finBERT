@@ -5,8 +5,8 @@
  1. Finbert 모델: [링크](https://huggingface.co/ProsusAI/finbert)로 접속해 `pytorch_model.bin` 다운로드 
  
  2. `models/sentiment/finbert` 폴더 안에 파일 세팅:  
-*`config.json` (프로젝트 폴더에 있는 파일 복사)
-*`pytorch_model.bin`(1에서 다운받은 감성분석 파일)
+* `config.json` (프로젝트 폴더에 있는 파일 복사)
+* `pytorch_model.bin`(1에서 다운받은 감성분석 파일)
 
  3. 필요한 파이썬 라이브러리 설치(윈도우os 환경에서 mingw사용):  
 ```bash
