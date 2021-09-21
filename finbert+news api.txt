@@ -1,0 +1,24 @@
+1.  오픈 소스 다운로드 
+관련 코드: https://github.com/ProsusAI/finBERT
+finbert 모델: 깃허브 내 링크로 pytorch_model.bin 다운로드
+필요한 파이썬 라이브러리 환경 설치:  
+>>cd requirements.txt가 있는 폴더 
+>>pip install -r requirements.txt
+
+주요 프로젝트 구조
+models/sentiment/finbert폴더
+- config 파일
+- 미리 학습된 모델 (pytorch_model.bin)
+
+notebooks 폴더
+- finbert 모델을 학습시키고 활용하는 finbert_training.ipynb
+
+scripts 폴더
+- 학습 데이터를 나누는 datasets.py 
+- 입력된 파라미터로 테스트 데이터를 감성분석 시키는 predict.py
+>> python predict.py --text_path test.txt --output_dir output/ --model_path models/sentiment/finbert
+
+2. 모델 활용하기
+stock news sentiment analysis.ipynb 사용
+: 야후 파이낸스에서 특정 종목에 해당하는 뉴스를 추출하고 
+해당 뉴스 기사를 finbert를 이용해 감성분석하는 코드
