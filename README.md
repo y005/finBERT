@@ -8,7 +8,7 @@
 * `config.json` (프로젝트 폴더에 있는 파일 복사)
 * `pytorch_model.bin`(1에서 다운받은 감성분석 파일)
 
- 3. 필요한 파이썬 라이브러리 설치(윈도우os 환경에서 mingw사용):  
+ 3. 필요한 파이썬 라이브러리 설치(Ubuntu):  
 ```bash
  cd requirements.txt가 있는 프로젝트 폴더 
  pip install -r requirements.txt
