@@ -15,7 +15,7 @@ def getStockNews(code):
     headers = {
         'content-type': "text/plain",
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
-        'x-rapidapi-key': "bd2bc7360bmsha9dc79919d1c7e9p1641b7jsnb4bd1c60dbe6"
+        'x-rapidapi-key': "yahoo finance api key"
         }
     response = requests.request("POST", url, data=payload, headers=headers, params=querystring)
     json_data = json.loads(response.text)
@@ -32,7 +32,7 @@ def getNewsContent(ID):
     querystring = {"uuid":ID,"region":"US"}
     headers = {
         'x-rapidapi-host': "apidojo-yahoo-finance-v1.p.rapidapi.com",
-        'x-rapidapi-key': "bd2bc7360bmsha9dc79919d1c7e9p1641b7jsnb4bd1c60dbe6"
+        'x-rapidapi-key': "yahoo finance api key"
         }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
